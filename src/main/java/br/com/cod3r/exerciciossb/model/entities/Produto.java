@@ -13,10 +13,34 @@ public class Produto {
     @Column(name = "nome")
     private String nome;
 
+    @Column(name = "preco")
+    private double preco;
+
+    @Column(name = "desconto")
+    private double desconto;
+
     public Produto(){}
 
-    public Produto(String nome) {
+    public Produto(String nome, double preco, double desconto) {
         this.nome = nome;
+        this.preco = preco;
+        this.desconto = desconto;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+    public double getDesconto() {
+        return desconto;
+    }
+
+    public void setDesconto(double desconto) {
+        this.desconto = desconto;
     }
 
     public String getNome() {
