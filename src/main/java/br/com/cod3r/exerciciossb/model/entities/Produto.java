@@ -1,6 +1,9 @@
 package br.com.cod3r.exerciciossb.model.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "produtos")
@@ -11,11 +14,15 @@ public class Produto {
     private int id;
 
     @Column(name = "nome")
+    @NotBlank
     private String nome;
 
     @Column(name = "preco")
+    @Min(0)
     private double preco;
 
+    @Min(0)
+    @Max(1)
     @Column(name = "desconto")
     private double desconto;
 
